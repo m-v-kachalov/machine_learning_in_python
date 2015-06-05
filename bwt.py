@@ -39,14 +39,4 @@ def burrows_wheeler_reconstruct(t):
 		for j in xrange(len(t)):
 			results[j] = t[j] + results[j]
 		results.sort()
-	return results
-	#return next((i[:-1] for i in results if i[-1] == '$'), None)
-
-
-###############################################################################
-
-
-# example run with a simple sentence 
-s = 'srrecftcgci  niahscsouttmoeaoy claee u nn csas'
-# print 'transformed string\t', s
-print 'reconstructed/original string\t', burrows_wheeler_reconstruct(s)
+	return next((i[:-1] for i in results if i[-1] == '$'), None)
